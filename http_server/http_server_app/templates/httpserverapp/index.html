@@ -1,14 +1,18 @@
 <!doctype html>
+{% load static %}
 <html lang="ja">
   <head>
     <meta charset="utf-8">
     <title>テストWebアプリ</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <script src="{% static 'javascript/sample.js' %}"></script>
   </head>
   <body>
     <h1>index.html表示してます</h1>
-    {{insert_something}}
-    ２段落目
-    <p>作成者は<b>{{name}}</b>です</p>
+    <img src="{% static 'images/test_img.png' %}" alt="表示できません">
+    <p>{{insert_something}}</p>
+    <p>2段落目</p>
+    <p>作成者は<b id="test">{{name}}</b>です</p>
     <h2>タイトル表示</h2>
     <ol>
         {% for title in test_titles %}
