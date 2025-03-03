@@ -13,6 +13,23 @@
     <p>{{insert_something}}</p>
     <p>2段落目</p>
     <p>作成者は<b id="test">{{name}}</b>です</p>
+
+    <p>{{ insert_forms|linebreaksbr }}</p>
+    <table>
+        <form action="{% url 'http_server_app:index' %}" method="post">
+            {% csrf_token %}
+            <tr>
+                <td></td>
+                <td>入力フォーム</td>
+            </tr>
+            {{ form.as_table }}
+            <tr>
+                <td></td>
+                <td><input type="submit" value="送信"></td>
+            </tr>
+        </form>
+    </table>
+
     <h2>タイトル表示</h2>
     <ol>
         {% for title in test_titles %}
